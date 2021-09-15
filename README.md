@@ -7,8 +7,15 @@ Projet **Symfony 5** réalisé en cours de formation MBA Développeur Fullstack 
 ## Description
 
 Il s'agit de la partie back-end (API) du projet Kwoka réalisé lors de la formation MBA Développeur Fullstack à MyDigitalSchool.
-L'API a été réalisée avec le framework PHP [Symfony](https://symfony.com/) qui est un ensemble de composants PHP basé sur pattern d'architecture logicielle MVC (Modèle, Vue, Controlleur),
+
+L'API a été réalisée avec le framework PHP [Symfony](https://symfony.com/) qui est un ensemble de composants PHP basé sur le modèle d'architecture logicielle MVC (Modèle, Vue, Controlleur),
 en lien avec l'outil [ApiPlatform](https://api-platform.com/) étant une librairie puissante et moderne permettant la création d'APIs REST moderne.
+
+## Architecture
+
+### Diagramme de classe
+
+<img src="assets/img/Diagramme_de_classe_Kwoka_(v1.2).png" alt="Diagramme de classe Kwoka" height="280" />
 
 ## Accès en ligne
 
