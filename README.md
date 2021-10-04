@@ -13,7 +13,7 @@ en lien avec l'outil [ApiPlatform](https://api-platform.com/) étant une librair
 
 ### Diagramme de classe
 
-<img src="assets/img/Diagramme_de_classe_Kwoka_(v1.2).png" alt="Diagramme de classe Kwoka" height="480" />
+<img src="assets/img/Diagramme_de_classe_Kwoka_(v2).png" alt="Diagramme de classe Kwoka" height="480" />
 
 ## Accès en ligne
 

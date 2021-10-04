@@ -33,12 +33,12 @@ class Activity
     private $picture;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", nullable=true)
      */
     private $creation_date;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", nullable=true)
      */
     private $update_date;
 
@@ -93,7 +93,7 @@ class Activity
         return $this->creation_date;
     }
 
-    public function setCreationDate(\DateTimeInterface $creation_date): self
+    public function setCreationDate(?\DateTimeInterface $creation_date): self
     {
         $this->creation_date = $creation_date;
 
@@ -105,7 +105,7 @@ class Activity
         return $this->update_date;
     }
 
-    public function setUpdateDate(\DateTimeInterface $update_date): self
+    public function setUpdateDate(?\DateTimeInterface $update_date): self
     {
         $this->update_date = $update_date;
 
