@@ -2,11 +2,18 @@
 
 namespace App\Entity;
 
-use App\Repository\PlaceRepository;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\PlaceRepository;
+use ApiPlatform\Core\Annotation\ApiResource;
 
 /**
  * @ORM\Entity(repositoryClass=PlaceRepository::class)
+ * @ApiResource(
+ *  attributes = {
+ *      "pagination_enabled" = true,
+ *      "pagination_items_per_page" = 10
+ *  }
+ * )
  */
 class Place
 {
@@ -35,12 +42,12 @@ class Place
     /**
      * @ORM\Column(type="datetime", nullable=true)
      */
-    private $creation_date;
+    private $creationDate;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
      */
-    private $update_date;
+    private $updateDate;
 
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="places")
@@ -90,24 +97,24 @@ class Place
 
     public function getCreationDate(): ?\DateTimeInterface
     {
-        return $this->creation_date;
+        return $this->creationDate;
     }
 
-    public function setCreationDate(?\DateTimeInterface $creation_date): self
+    public function setCreationDate(?\DateTimeInterface $creationDate): self
     {
-        $this->creation_date = $creation_date;
+        $this->creationDate = $creationDate;
 
         return $this;
     }
 
     public function getUpdateDate(): ?\DateTimeInterface
     {
-        return $this->update_date;
+        return $this->updateDate;
     }
 
-    public function setUpdateDate(?\DateTimeInterface $update_date): self
+    public function setUpdateDate(?\DateTimeInterface $updateDate): self
     {
-        $this->update_date = $update_date;
+        $this->updateDate = $updateDate;
 
         return $this;
     }

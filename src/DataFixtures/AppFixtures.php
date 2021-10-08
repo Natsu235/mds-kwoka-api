@@ -36,14 +36,14 @@ class AppFixtures extends Fixture
         $adminHash = $this->encoder->hashPassword($adminUser, 'password');
 
         $adminUser->setFirstName("Dorian");
-        $adminUser->setLastName("PILORGE");
+        $adminUser->setLastName("Pilorge");
         $adminUser->setEmail("dorian.pilorge@symfony.com");
         $adminUser->setPassword($adminHash);
         //$adminUser->setPicture("https://cdn.pixabay.com/photo/2012/04/26/19/43/profile-42914_960_720.png");
         //$adminUser->addUserRole($adminRole);
         $manager->persist($adminUser);
 
-        // Génération d'utilisateurs de test
+        // Génération d'utilisateurs
         for($u = 0; $u < 20; $u++) {
             $user = new User();
 

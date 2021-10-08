@@ -2,15 +2,17 @@
 
 namespace App\Entity;
 
-use App\Repository\UserRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
+use App\Repository\UserRepository;
+use Doctrine\Common\Collections\Collection;
+use ApiPlatform\Core\Annotation\ApiResource;
+use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
+ * @ApiResource
  */
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
@@ -40,22 +42,22 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $first_name;
+    private $firstName;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $last_name;
+    private $lastName;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
      */
-    private $creation_date;
+    private $creationDate;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
      */
-    private $update_date;
+    private $updateDate;
 
     /**
      * @ORM\OneToMany(targetEntity=Place::class, mappedBy="user")
@@ -164,48 +166,48 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     public function getFirstName(): ?string
     {
-        return $this->first_name;
+        return $this->firstName;
     }
 
-    public function setFirstName(string $first_name): self
+    public function setFirstName(string $firstName): self
     {
-        $this->first_name = $first_name;
+        $this->firstName = $firstName;
 
         return $this;
     }
 
     public function getLastName(): ?string
     {
-        return $this->last_name;
+        return $this->lastName;
     }
 
-    public function setLastName(string $last_name): self
+    public function setLastName(string $lastName): self
     {
-        $this->last_name = $last_name;
+        $this->lastName = $lastName;
 
         return $this;
     }
 
     public function getCreationDate(): ?\DateTimeInterface
     {
-        return $this->creation_date;
+        return $this->creationDate;
     }
 
-    public function setCreationDate(?\DateTimeInterface $creation_date): self
+    public function setCreationDate(?\DateTimeInterface $creationDate): self
     {
-        $this->creation_date = $creation_date;
+        $this->creationDate = $creationDate;
 
         return $this;
     }
 
     public function getUpdateDate(): ?\DateTimeInterface
     {
-        return $this->update_date;
+        return $this->updateDate;
     }
 
-    public function setUpdateDate(?\DateTimeInterface $update_date): self
+    public function setUpdateDate(?\DateTimeInterface $updateDate): self
     {
-        $this->update_date = $update_date;
+        $this->updateDate = $updateDate;
 
         return $this;
     }
