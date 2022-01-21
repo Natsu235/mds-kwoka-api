@@ -1,7 +1,7 @@
 api_platform:
     title: 'Kwoka API'
     description: 'API du site web Kwoka'
-    version: '0.1.0'
+    version: '0.2.0'
     collection:
         pagination:
             enabled: false

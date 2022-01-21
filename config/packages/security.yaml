@@ -5,7 +5,7 @@ security:
     password_hashers:
         Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface: 'auto'
         App\Entity\User:
-            algorithm: auto # bcrypt
+            algorithm: bcrypt
 
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
@@ -18,6 +18,21 @@ security:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
+        registration:
+            pattern: ^/api/users
+            stateless: true
+            methods: [POST]
+        login:
+            pattern: ^/api/login
+            stateless: true
+            json_login:
+                check_path: /api/login_check # or api_login_check as defined in config/routes.yaml
+                success_handler: lexik_jwt_authentication.handler.authentication_success
+                failure_handler: lexik_jwt_authentication.handler.authentication_failure
+        api:
+            pattern:   ^/api
+            stateless: true
+            jwt: ~
         main:
             lazy: true
             provider: app_user_provider
@@ -33,3 +48,7 @@ security:
     access_control:
         # - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
+        - { path: ^/api/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/api/users, roles: IS_AUTHENTICATED_FULLY, methods: [GET, PUT, DELETE, PATCH] }
+        - { path: ^/api/places, roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/api/activities, roles: IS_AUTHENTICATED_FULLY }

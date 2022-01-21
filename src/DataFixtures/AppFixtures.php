@@ -6,6 +6,7 @@ use Faker\Factory;
 use App\Entity\User;
 use App\Entity\Place;
 use App\Entity\Activity;
+use DateTime;
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
@@ -33,26 +34,35 @@ class AppFixtures extends Fixture
         // Génération d'un utlisateur admin
         $adminUser = new User();
 
-        $adminHash = $this->encoder->hashPassword($adminUser, 'password');
-
         $adminUser->setFirstName("Dorian");
         $adminUser->setLastName("Pilorge");
         $adminUser->setEmail("dorian.pilorge@symfony.com");
-        $adminUser->setPassword($adminHash);
+        $adminUser->setPassword($this->encoder->hashPassword($adminUser, 'password'));
         //$adminUser->setPicture("https://cdn.pixabay.com/photo/2012/04/26/19/43/profile-42914_960_720.png");
-        $adminUser->addUserRole("ROLE_ADMIN");
+        $adminUser->setRoles(["ROLE_ADMIN"]);
+        $adminUser->setCreationDate(new DateTime());
         $manager->persist($adminUser);
 
-        // Génération d'utilisateurs
-        for($u = 0; $u < 20; $u++) {
-            $user = new User();
+        // Génération d'un utlisateur normal
+        $normalUser = new User();
 
-            $hash = $this->encoder->hashPassword($user, 'password');
+        $normalUser->setFirstName("John");
+        $normalUser->setLastName("Doe");
+        $normalUser->setEmail("john.doe@symfony.com");
+        $normalUser->setPassword($this->encoder->hashPassword($normalUser, 'password'));
+        //$normalUser->setPicture("https://cdn.pixabay.com/photo/2012/04/26/19/43/profile-42914_960_720.png");
+        $normalUser->setCreationDate(new DateTime());
+        $manager->persist($normalUser);
+
+        // Génération d'autres utilisateurs lambda
+        for ($u = 0; $u < 20; $u++) {
+
+            $user = new User();
 
             $user->setFirstName($faker->firstName())
                  ->setLastName($faker->lastName())
                  ->setEmail($faker->email())
-                 ->setPassword($hash)
+                 ->setPassword($this->encoder->hashPassword($user, 'password'))
                  ->setCreationDate($faker->dateTimeBetween('-6 months'));
 
             $manager->persist($user);
