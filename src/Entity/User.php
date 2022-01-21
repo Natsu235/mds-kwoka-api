@@ -9,10 +9,18 @@ use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
+use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
- * @ApiResource
+ * @ApiResource(
+ *  normalizationContext={
+ *      "groups"={"users_read"}
+ *  }
+ * )
+ * @UniqueEntity("email", message="Il existe déjà un utilisateur disposant de cette adresse mail.")
  */
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
@@ -20,52 +28,75 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups({"users_read", "places_read", "activities_read"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
+     * @Assert\NotBlank(message="L'adresse mail doit être renseignée.")
+     * @Assert\Email(message="Veuillez renseigner une adresse mail valide.")
+     * @Groups({"users_read", "places_read", "activities_read"})
      */
     private $email;
 
     /**
      * @ORM\Column(type="json")
+     * @Groups({"users_read"})
      */
     private $roles = [];
 
     /**
      * @var string The hashed password
      * @ORM\Column(type="string")
+     * @Assert\NotBlank(message="Le mot de passe doit être renseigné.")
+     * @Groups({"users_read"})
      */
     private $password;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="Le prénom doit être renseigné.")
+     * @Assert\Length(
+     *  min=3, minMessage="Le prénom doit faire entre 3 et 255 caractères.",
+     *  max=255, maxMessage="Le prénom doit faire entre 3 et 255 caractères."
+     * )
+     * @Groups({"users_read", "places_read","activities_read"})
      */
     private $firstName;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="Le nom doit être renseigné.")
+     * @Assert\Length(
+     *  min=3, minMessage="Le prénom doit faire entre 3 et 255 caractères.",
+     *  max=255, maxMessage="Le prénom doit faire entre 3 et 255 caractères."
+     * )
+     * @Groups({"users_read", "places_read","activities_read"})
      */
     private $lastName;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
+     * @Groups({"users_read"})
      */
     private $creationDate;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
+     * @Groups({"users_read"})
      */
     private $updateDate;
 
     /**
      * @ORM\OneToMany(targetEntity=Place::class, mappedBy="user")
+     * @Groups({"users_read"})
      */
     private $places;
 
     /**
      * @ORM\OneToMany(targetEntity=Activity::class, mappedBy="user")
+     * @Groups({"users_read"})
      */
     private $activities;
 

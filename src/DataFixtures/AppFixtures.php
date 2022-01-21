@@ -40,7 +40,7 @@ class AppFixtures extends Fixture
         $adminUser->setEmail("dorian.pilorge@symfony.com");
         $adminUser->setPassword($adminHash);
         //$adminUser->setPicture("https://cdn.pixabay.com/photo/2012/04/26/19/43/profile-42914_960_720.png");
-        //$adminUser->addUserRole($adminRole);
+        $adminUser->addUserRole("ROLE_ADMIN");
         $manager->persist($adminUser);
 
         // Génération d'utilisateurs
