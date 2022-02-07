@@ -17,8 +17,8 @@ en lien avec l'outil [ApiPlatform](https://api-platform.com/) étant une librair
 
 ## Accès en ligne
 
-Accès au site web Kwoka: [WIP]
-Accès au Swagger de l'API Kwoka: https://mds-kwoka-api.herokuapp.com/api
+* Accès au site web Kwoka: [WIP]
+* Accès à l'API Kwoka: https://mds-kwoka-api.herokuapp.com/api
 
 ## Dependances
 
@@ -27,7 +27,6 @@ Accès au Swagger de l'API Kwoka: https://mds-kwoka-api.herokuapp.com/api
 ## Ressources externes
 
 * [Trello](https://trello.com/b/2GEz4fMe/kwoka-back-end) - Outil de gestion de projet agile
-
 * [Swagger](https://mds-kwoka-api.herokuapp.com/api) - Liste de l'ensemble des requêtes prises en charge par l'API (à définir)
 
 ## Licence
