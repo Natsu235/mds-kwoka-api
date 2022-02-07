@@ -27,7 +27,8 @@ Accès au Swagger de l'API Kwoka: https://mds-kwoka-api.herokuapp.com/api
 ## Ressources externes
 
 * [Trello](https://trello.com/b/2GEz4fMe/kwoka-back-end) - Outil de gestion de projet agile
-* [Swagger](#) - Liste de l'ensemble des requêtes prises en charge par l'API (à définir)
+
+* [Swagger](https://mds-kwoka-api.herokuapp.com/api) - Liste de l'ensemble des requêtes prises en charge par l'API (à définir)
 
 ## Licence
 
