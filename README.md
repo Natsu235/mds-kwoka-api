@@ -13,11 +13,12 @@ en lien avec l'outil [ApiPlatform](https://api-platform.com/) étant une librair
 
 ### Diagramme de classe
 
-<img src="assets/img/Diagramme_de_classe_Kwoka_(v2).png" alt="Diagramme de classe Kwoka" height="480" />
+<img src="assets/img/Diagramme_de_classe_Kwoka_(Final).png" alt="Diagramme de classe Kwoka" height="480" />
 
 ## Accès en ligne
 
-Le projet étant à ce jour toujours en développement, le lien d'accès en ligne n'est pas encore disponible.
+Accès au site web Kwoka: [WIP]
+Accès au Swagger de l'API Kwoka: https://mds-kwoka-api.herokuapp.com/api
 
 ## Dependances
 

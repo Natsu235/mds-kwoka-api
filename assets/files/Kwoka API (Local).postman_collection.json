@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "dc8b5b62-15ee-446a-b8dd-f65718d3015a",
-		"name": "Kwoka API",
+		"_postman_id": "89e262a1-841d-44d7-9e0c-8d4a4f9fefeb",
+		"name": "Kwoka API (Local)",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -44,13 +44,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://mds-kwoka-api.herokuapp.com/api/login_check",
-							"protocol": "https",
+							"raw": "http://localhost:8000/api/login_check",
+							"protocol": "http",
 							"host": [
-								"mds-kwoka-api",
-								"herokuapp",
-								"com"
+								"localhost"
 							],
+							"port": "8000",
 							"path": [
 								"api",
 								"login_check"
@@ -86,13 +85,12 @@
 							}
 						],
 						"url": {
-							"raw": "https://mds-kwoka-api.herokuapp.com/api/users",
-							"protocol": "https",
+							"raw": "http://localhost:8000/api/users",
+							"protocol": "http",
 							"host": [
-								"mds-kwoka-api",
-								"herokuapp",
-								"com"
+								"localhost"
 							],
+							"port": "8000",
 							"path": [
 								"api",
 								"users"
@@ -117,13 +115,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://mds-kwoka-api.herokuapp.com/api/users/5",
-							"protocol": "https",
+							"raw": "http://localhost:8000/api/users/5",
+							"protocol": "http",
 							"host": [
-								"mds-kwoka-api",
-								"herokuapp",
-								"com"
+								"localhost"
 							],
+							"port": "8000",
 							"path": [
 								"api",
 								"users",
@@ -148,13 +145,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://mds-kwoka-api.herokuapp.com/api/users",
-							"protocol": "https",
+							"raw": "http://localhost:8000/api/users",
+							"protocol": "http",
 							"host": [
-								"mds-kwoka-api",
-								"herokuapp",
-								"com"
+								"localhost"
 							],
+							"port": "8000",
 							"path": [
 								"api",
 								"users"
@@ -195,13 +191,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://mds-kwoka-api.herokuapp.com/api/users/5",
-							"protocol": "https",
+							"raw": "http://localhost:8000/api/users/5",
+							"protocol": "http",
 							"host": [
-								"mds-kwoka-api",
-								"herokuapp",
-								"com"
+								"localhost"
 							],
+							"port": "8000",
 							"path": [
 								"api",
 								"users",
@@ -224,13 +219,12 @@
 							}
 						],
 						"url": {
-							"raw": "https://mds-kwoka-api.herokuapp.com/api/users/5",
-							"protocol": "https",
+							"raw": "http://localhost:8000/api/users/5",
+							"protocol": "http",
 							"host": [
-								"mds-kwoka-api",
-								"herokuapp",
-								"com"
+								"localhost"
 							],
+							"port": "8000",
 							"path": [
 								"api",
 								"users",
@@ -261,13 +255,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://mds-kwoka-api.herokuapp.com/api/places",
-							"protocol": "https",
+							"raw": "http://localhost:8000/api/places",
+							"protocol": "http",
 							"host": [
-								"mds-kwoka-api",
-								"herokuapp",
-								"com"
+								"localhost"
 							],
+							"port": "8000",
 							"path": [
 								"api",
 								"places"
@@ -292,13 +285,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://mds-kwoka-api.herokuapp.com/api/places/5",
-							"protocol": "https",
+							"raw": "http://localhost:8000/api/places/5",
+							"protocol": "http",
 							"host": [
-								"mds-kwoka-api",
-								"herokuapp",
-								"com"
+								"localhost"
 							],
+							"port": "8000",
 							"path": [
 								"api",
 								"places",
@@ -340,13 +332,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://mds-kwoka-api.herokuapp.com/api/places/5",
-							"protocol": "https",
+							"raw": "http://localhost:8000/api/places/5",
+							"protocol": "http",
 							"host": [
-								"mds-kwoka-api",
-								"herokuapp",
-								"com"
+								"localhost"
 							],
+							"port": "8000",
 							"path": [
 								"api",
 								"places",
@@ -369,13 +360,12 @@
 							}
 						],
 						"url": {
-							"raw": "https://mds-kwoka-api.herokuapp.com/api/places/5",
-							"protocol": "https",
+							"raw": "http://localhost:8000/api/places/5",
+							"protocol": "http",
 							"host": [
-								"mds-kwoka-api",
-								"herokuapp",
-								"com"
+								"localhost"
 							],
+							"port": "8000",
 							"path": [
 								"api",
 								"places",
@@ -406,7 +396,16 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": ""
+							"raw": "http://localhost:8000/api/activities",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"activities"
+							]
 						}
 					},
 					"response": []
@@ -445,13 +444,12 @@
 							}
 						],
 						"url": {
-							"raw": "https://mds-kwoka-api.herokuapp.com/api/activities/5",
-							"protocol": "https",
+							"raw": "http://localhost:8000/api/activities/5",
+							"protocol": "http",
 							"host": [
-								"mds-kwoka-api",
-								"herokuapp",
-								"com"
+								"localhost"
 							],
+							"port": "8000",
 							"path": [
 								"api",
 								"activities",
@@ -493,13 +491,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://mds-kwoka-api.herokuapp.com/api/activities/5",
-							"protocol": "https",
+							"raw": "http://localhost:8000/api/activities/5",
+							"protocol": "http",
 							"host": [
-								"mds-kwoka-api",
-								"herokuapp",
-								"com"
+								"localhost"
 							],
+							"port": "8000",
 							"path": [
 								"api",
 								"activities",
@@ -522,13 +519,12 @@
 							}
 						],
 						"url": {
-							"raw": "https://mds-kwoka-api.herokuapp.com/api/activities/5",
-							"protocol": "https",
+							"raw": "http://localhost:8000/api/activities/5",
+							"protocol": "http",
 							"host": [
-								"mds-kwoka-api",
-								"herokuapp",
-								"com"
+								"localhost"
 							],
+							"port": "8000",
 							"path": [
 								"api",
 								"activities",
