@@ -2,6 +2,8 @@
 
 Projet **Symfony 5** réalisé en cours de formation MBA Développeur Fullstack à MyDigitalSchool
 
+![Heroku](https://pyheroku-badge.herokuapp.com/?app=mds-kwoka-api&style=flat)
+
 ## Description
 
 Il s'agit de la partie back-end (API) du projet Kwoka réalisé lors de la formation MBA Développeur Fullstack à MyDigitalSchool.
